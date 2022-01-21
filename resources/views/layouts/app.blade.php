@@ -19,7 +19,7 @@
         <ul class="flex items-center">
             @auth
                 <li><a href="" class="p-3">Alex Garrett-Smith</a></li>
-                <li><a href="" class="p-3">Logout</a></li>
+                <li><form action="{{route('logout')}}" method="POST">@csrf <button class="p-3">Logout</button></form></li>
             @endauth
 
             @guest
