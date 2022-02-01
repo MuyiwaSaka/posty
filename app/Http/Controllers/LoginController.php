@@ -10,6 +10,7 @@ class LoginController extends Controller
     public function __construct()
     {
         # code...
+        $this->middleware('guest');
     }
 
     public function index(Request $request)
@@ -28,7 +29,7 @@ class LoginController extends Controller
         ]);
 
         //attempt login
-        if(!auth()->attempt($request->only('email','password'))){
+        if(!auth()->attempt($request->only('email','password'),$request->remember)){
             return  back()->with('status','Invalid login details');
         }
         # code...

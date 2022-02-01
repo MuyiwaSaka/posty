@@ -14,11 +14,11 @@
         <ul class="flex items-center">
             <li><a href="" class="p-3">Home</a></li>
             <li><a href="{{route('dashboard')}}" class="p-3">Dashboard</a></li>
-            <li><a href="" class="p-3">Post</a></li>
+            <li><a href="{{ route('posts')}}" class="p-3">Posts</a></li>
         </ul>
         <ul class="flex items-center">
             @auth
-                <li><a href="" class="p-3">Alex Garrett-Smith</a></li>
+                <li><a href="" class="p-3">{{auth()->user()->name}}</a></li>
                 <li><form action="{{route('logout')}}" method="POST">@csrf <button class="p-3">Logout</button></form></li>
             @endauth
 
